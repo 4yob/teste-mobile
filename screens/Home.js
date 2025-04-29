@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, FlatList, Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, FlatList, Image, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const itens = [
@@ -19,6 +19,7 @@ export default function HomeScreen() {
     const navigation = useNavigation();
 
     return (
+        <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.container}>
             <View style={styles.header}>
                 <View style={styles.bar}></View>
@@ -53,6 +54,7 @@ export default function HomeScreen() {
                     <Text style={styles.buttonText}>Navegar</Text>
                 </TouchableOpacity>
         </View>
+        </ScrollView>
     );
 }
 
@@ -61,6 +63,8 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#f0f0f0',
         alignItems: 'center',
+        margintop: 20,
+        marginBottom: 20,
     },
     header: {
         display: 'flex',
@@ -68,8 +72,8 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         justifyContent: 'center',
         width: '100%',
-        height: 125,
-        paddingTop: 70,
+        height: 65,
+        paddingTop: 20,
         gap: 20,
     },
     bar: {
@@ -91,7 +95,7 @@ const styles = StyleSheet.create({
     section: {
         display: 'flex',
         width: '100%',
-        height: 150,
+        height: 120,
     },
     horizontalScrollView: {
         paddingLeft: 50,
@@ -122,6 +126,7 @@ const styles = StyleSheet.create({
         borderColor: '#000',
         borderRadius: 25,
         padding: 22,
+        marginTop: 10,
     },
     cardTop: {
         display: 'flex',
@@ -154,7 +159,7 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 35,
+        marginTop: 15,
     },
     buttonText: {
         color: '#fff',
